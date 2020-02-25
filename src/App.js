@@ -11,7 +11,6 @@ import Home from './pages/home/home';
 class App extends React.Component {
   constructor() {
     super()
-
     this.state = {
       currentUser: null,
       isLoading: true

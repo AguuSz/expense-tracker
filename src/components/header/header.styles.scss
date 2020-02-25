@@ -1,0 +1,27 @@
+.header {
+    background-color: #494D77;
+
+    .container {
+        display: flex;
+        width: 1500px;
+        margin: 0 auto;
+        padding: 2em;
+    }
+
+    p {
+        margin: 0;
+        color: #FFD082;
+        font-size: 2em;
+        cursor: pointer;
+    }
+
+    .inicio {
+        width: 60%;
+    }
+
+    .resto-opciones {
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
