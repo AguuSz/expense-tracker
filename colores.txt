@@ -1,0 +1,8 @@
+bkg color: #21243D;
+bkgcolor-claro: #2E3151;
+masclaro: #434772;
+amarillo: #FFD082;
+header: #494D77;
+celeste: #88E1F2;
+
+opacidad de cuadrados: 5%
