@@ -2,10 +2,23 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
+import { css } from "@emotion/core";
+
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import { ClockLoader } from 'react-spinners'
 
 import Welcome from './pages/welcome/welcome';
 import Register from './components/register/register';
+
+const override = css`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
 
 class App extends React.Component {
   constructor() {
@@ -46,26 +59,30 @@ class App extends React.Component {
 
   render() {
 
-    const mostarUnaVezLogeado = () => {
-      if (this.state.currentUser) {
-        return (
-          <div className="">
-            <h1>Hola humanoides, estoy logea3</h1>
+    if (!this.state.isLoading) {
+      return (
+        <Router>
+          <div className="app">
+            <Route path="/login" exact component={Welcome} />
+            <Route path="/register" component={Register} />
           </div>
-        )
-      }
-    }
-
-    return (
-      <Router>
-        <div className="app">
-          <Route path="/login" exact component={Welcome} />
-          <Route path="/register" component={Register} />
-          {mostarUnaVezLogeado()}
+        </Router>
+      )
+    } else {
+      return (
+        <div className="" >
+          <ClockLoader
+            css={override}
+            size={250}
+            //size={"150px"} this also works
+            color={"#FFD082"}
+            loading={this.state.isLoading}
+          />
         </div>
-      </Router>
-    )
+      )
+    }
   }
 }
+
 
 export default App;
