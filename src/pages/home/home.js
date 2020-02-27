@@ -5,7 +5,9 @@ import { css } from "@emotion/core";
 import { Redirect } from 'react-router-dom';
 import { ClockLoader } from 'react-spinners';
 import { auth } from '../../firebase/firebase.utils';
+
 import Header from '../../components/header/header';
+import Carta from '../../components/carta/carta';
 
 const override = css`
   position: absolute;
@@ -32,9 +34,7 @@ const Home = ({ currentUser, isLoading }) => {
                                     <h1>Expense Tracker</h1>
 
                                     <div className="cartas">
-                                        <div className="carta balance">
-                                            <h2>Balance</h2>
-
+                                        <Carta titulo="Balance">
                                             <div className="filas">
                                                 <div className="fila">
                                                     <h3>Billetera</h3>
@@ -49,31 +49,28 @@ const Home = ({ currentUser, isLoading }) => {
                                                     <h3>$ 99.999</h3>
                                                 </div>
                                             </div>
+                                        </Carta>
 
-                                        </div>
+                                        <Carta titulo="Rendimiento">
 
-                                        <div className="carta rendimiento">
-                                            <h2>Rendimiento</h2>
-                                        </div>
+                                        </Carta>
 
-                                        <div className="carta ultimos-movimientos">
-                                            <h2>Ultimos movimientos</h2>
-
+                                        <Carta titulo="Ultimos movimientos" tipo="ultimos-movimientos">
                                             <div className="filas">
                                                 <div className="fila">
-                                                    <h3>550,05</h3>
-                                                    <h3>+</h3>
+                                                    <h3 className="importe positivo">550,05</h3>
+                                                    <h3 className="signo positivo">+</h3>
                                                 </div>
                                                 <div className="fila">
-                                                    <h3>550,05</h3>
-                                                    <h3>+</h3>
+                                                    <h3 className="importe negativo">550,05</h3>
+                                                    <h3 className="signo negativo">+</h3>
                                                 </div>
                                                 <div className="fila">
-                                                    <h3>550,05</h3>
-                                                    <h3>+</h3>
+                                                    <h3 className="importe positivo">550,05</h3>
+                                                    <h3 className="signo positivo">+</h3>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </Carta>
                                     </div>
 
                                     <button className="boton" onClick={() => auth.signOut()}>Cerrar sesion</button>
