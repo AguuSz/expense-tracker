@@ -6,7 +6,6 @@ import { Redirect } from 'react-router-dom';
 import { ClockLoader } from 'react-spinners';
 import { auth } from '../../firebase/firebase.utils';
 
-import Header from '../../components/header/header';
 import Carta from '../../components/carta/carta';
 
 const override = css`
@@ -29,7 +28,6 @@ const Home = ({ currentUser, isLoading }) => {
                     currentUser ?
                         (
                             <div className="home">
-                                <Header />
                                 <div className="container">
                                     <h1>Expense Tracker</h1>
 
@@ -37,15 +35,15 @@ const Home = ({ currentUser, isLoading }) => {
                                         <Carta titulo="Balance">
                                             <div className="filas">
                                                 <div className="fila">
-                                                    <h3>Billetera</h3>
+                                                    <h3 className="cuenta">Billetera</h3>
                                                     <h3 className="importe positivo">$ 99.999</h3>
                                                 </div>
                                                 <div className="fila">
-                                                    <h3>Banco</h3>
+                                                    <h3 className="cuenta">Banco</h3>
                                                     <h3 className="importe positivo">$ 99.999</h3>
                                                 </div>
                                                 <div className="fila">
-                                                    <h3>Tarjeta C.</h3>
+                                                    <h3 className="cuenta">Tarjeta C.</h3>
                                                     <h3 className="importe positivo">$ 99.999</h3>
                                                 </div>
                                             </div>
