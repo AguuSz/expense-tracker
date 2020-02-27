@@ -1,24 +1,10 @@
-.ultimos-movimientos {
-    background-color: red;
-}
-
 .carta {
     width: 400px;
     height: 400px;
     background-color: #2E3151;
     border-radius: 20px;
     padding: 20px;
-
     text-align: center;
-
-    h2 {
-        color: #FFD082;
-        font-size: 2em;;
-        font-weight: 300;
-        margin: 15px 0 0 0;
-        height: 20%;
-    }
-
     
     .filas {
         height: 75%;
@@ -37,33 +23,6 @@
             justify-content: space-between;
             align-items: center;
             height: 60px;
-
-            h3 {
-                font-size: 1.5em;
-                font-weight: 400;
-                margin: 0;
-                letter-spacing: 0.1em;
-            }
-
-            .importe {
-                &.positivo {
-                    color: #6ED97C;
-                }
-                &.negativo {
-                    color: #DE4040;
-                }
-            }
-
-            .signo {
-                font-size: 3em;
-                margin: 0;
-                &.positivo {
-                    color: #6ED97C;
-                }
-                &.negativo {
-                    color: #DE4040;
-                }
-            }
         }
 
     }

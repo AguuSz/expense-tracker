@@ -1,0 +1,57 @@
+body {
+  background-color: #21243D;
+  font-family: 'Roboto', ;
+}
+
+.container {
+  width: 1500px;
+  margin: 0 auto;
+
+  color: #FFD082;
+}
+
+h1 {
+  color: #FFD082;
+  font-size: 4em;
+  font-weight: 300;
+}
+
+h2 {
+  color: #FFD082;
+  font-size: 2em;;
+  font-weight: 300;
+  margin: 15px 0 0 0;
+  height: 20%;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: 0.1em;
+
+  &.cuenta {
+    font-weight: 200;
+  }
+}
+
+.importe {
+  &.positivo {
+      color: #6ED97C;
+      font-weight: 700;
+  }
+  &.negativo {
+      color: #DE4040;
+  }
+}
+
+.signo {
+  font-size: 3em;
+  margin: 0;
+  &.positivo {
+      color: #6ED97C;
+  }
+  &.negativo {
+      color: #DE4040;
+  }
+}

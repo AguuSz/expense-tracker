@@ -1,12 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './App.css';
+import './App.styles.scss';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import Login from './components/login/login';
 import Register from './components/register/register';
+import Header from './components/header/header';
+
 import Home from './pages/home/home';
+import Movimientos from './pages/movimientos/movimientos';
+import Perfil from './pages/perfil/perfil';
+import Cuentas from './pages/cuentas/cuentas';
 
 class App extends React.Component {
   constructor() {
@@ -51,9 +56,13 @@ class App extends React.Component {
     return (
       <div className="app">
         <Router>
+          {isLoading ? null : <Header />}
           <Route path="/" exact render={(props) => <Home currentUser={currentUser} isLoading={isLoading} />} />
           <Route path="/login" render={(props) => <Login currentUser={currentUser} />} />
           <Route path="/register" component={Register} />
+          <Route path="/movimientos" component={Movimientos} />
+          <Route path="/cuentas" component={Cuentas} />
+          <Route path="/perfil" component={Perfil} />
         </Router>
       </div>
     )

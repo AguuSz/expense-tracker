@@ -1,22 +1,24 @@
 import React from 'react';
 import './header.styles.scss';
 
-const Header = () => {
+import { withRouter } from 'react-router-dom';
+
+const Header = ({ history }) => {
     return (
         <div className="header">
             <div className="container">
                 <div className="inicio">
-                    <p className="enlace-header">Inicio</p>
+                    <p onClick={() => history.push('/')} className="enlace-header">Inicio</p>
                 </div>
 
                 <div className="resto-opciones">
-                    <p className="enlace-header">Cuentas</p>
-                    <p className="enlace-header">Movimientos</p>
-                    <p className="enlace-header">Mi perfil</p>
+                    <p onClick={() => history.push('/cuentas')} className="enlace-header">Cuentas</p>
+                    <p onClick={() => history.push('/movimientos')} className="enlace-header">Movimientos</p>
+                    <p onClick={() => history.push('/perfil')} className="enlace-header">Mi perfil</p>
                 </div>
             </div>
         </div>
     )
 }
 
-export default Header;
+export default withRouter(Header);
