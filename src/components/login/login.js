@@ -3,12 +3,13 @@ import './login.scss';
 
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        console.log(this.props)
         this.state = ({
             correo: '',
             contraseña: ''
@@ -45,6 +46,12 @@ class Login extends React.Component {
     }
 
     render() {
+
+        if (this.props.currentUser) {
+            return (
+                <Redirect to="/" />
+            )
+        }
 
         const { correo, contraseña } = this.state;
 

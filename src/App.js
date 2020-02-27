@@ -4,13 +4,13 @@ import './App.css';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
-import Welcome from './pages/welcome/welcome';
+import Login from './components/login/login';
 import Register from './components/register/register';
+import Home from './pages/home/home';
 
 class App extends React.Component {
   constructor() {
     super()
-
     this.state = {
       currentUser: null,
       isLoading: true
@@ -46,24 +46,16 @@ class App extends React.Component {
 
   render() {
 
-    const mostarUnaVezLogeado = () => {
-      if (this.state.currentUser) {
-        return (
-          <div className="">
-            <h1>Hola humanoides, estoy logea3</h1>
-          </div>
-        )
-      }
-    }
+    const { currentUser, isLoading } = this.state;
 
     return (
-      <Router>
-        <div className="app">
-          <Route path="/login" exact component={Welcome} />
+      <div className="app">
+        <Router>
+          <Route path="/" exact render={(props) => <Home currentUser={currentUser} isLoading={isLoading} />} />
+          <Route path="/login" render={(props) => <Login currentUser={currentUser} />} />
           <Route path="/register" component={Register} />
-          {mostarUnaVezLogeado()}
-        </div>
-      </Router>
+        </Router>
+      </div>
     )
   }
 }
