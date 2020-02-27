@@ -38,15 +38,15 @@ const Home = ({ currentUser, isLoading }) => {
                                             <div className="filas">
                                                 <div className="fila">
                                                     <h3>Billetera</h3>
-                                                    <h3>$ 99.999</h3>
+                                                    <h3 className="importe positivo">$ 99.999</h3>
                                                 </div>
                                                 <div className="fila">
                                                     <h3>Banco</h3>
-                                                    <h3>$ 99.999</h3>
+                                                    <h3 className="importe positivo">$ 99.999</h3>
                                                 </div>
                                                 <div className="fila">
                                                     <h3>Tarjeta C.</h3>
-                                                    <h3>$ 99.999</h3>
+                                                    <h3 className="importe positivo">$ 99.999</h3>
                                                 </div>
                                             </div>
                                         </Carta>
